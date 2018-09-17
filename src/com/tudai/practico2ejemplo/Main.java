@@ -19,5 +19,8 @@ public class Main {
 		
 		em.persist(evaluador);
 		em.getTransaction().commit();
+		
+		em.close();
+		emf.close();
 	}
 }

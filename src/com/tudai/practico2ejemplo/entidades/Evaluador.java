@@ -10,8 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-
+@Entity
 public class Evaluador implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2136060257901848874L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
