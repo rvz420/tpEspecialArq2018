@@ -9,6 +9,15 @@ import com.tudai.practico2ejemplo.entidades.*;
 
 public class Main {
 	public static void main(String[] args) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("TP-Especial-2018");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
 		
+		Evaluador evaluador = new Evaluador();
+		evaluador.setNombre("Shaggy");
+		evaluador.setApellido("Munios");
+		
+		em.persist(evaluador);
+		em.getTransaction().commit();
 	}
 }
