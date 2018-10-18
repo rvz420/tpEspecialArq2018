@@ -13,9 +13,9 @@ public class Main {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		
-		Evaluador evaluador = new Evaluador();
+		Usuario evaluador = new Usuario();
 		evaluador.setNombre("Shaggy");
-		evaluador.setApellido("Munios");
+		evaluador.setApellido("Muñoz");
 		
 		em.persist(evaluador);
 		em.getTransaction().commit();
