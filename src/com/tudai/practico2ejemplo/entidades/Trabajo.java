@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Trabajo implements Serializable{
@@ -28,6 +27,12 @@ public class Trabajo implements Serializable{
 				inverseJoinColumns= {@JoinColumn(name="id_user")})
 	
 	private List<Usuario> usuarios;
+	
+	@ManyToMany
+	@JoinTable(name="trabajo_palabra",
+				joinColumns= {@JoinColumn(name="id_trabajo")},
+				inverseJoinColumns= {@JoinColumn(name="id_palabra")})
+	private List<Palabra> palabras;
 	
 	public Trabajo(String c) {
 		category = c;

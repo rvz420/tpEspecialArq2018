@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Usuario implements Serializable {
@@ -31,6 +30,17 @@ public class Usuario implements Serializable {
 	
 	private List<Trabajo> trabajos;
 	
+	@ManyToMany
+	@JoinTable(name="usuario_palabra",
+				joinColumns= {@JoinColumn(name="id_user")},
+				inverseJoinColumns= {@JoinColumn(name="id_palabra")})
+	private List<Palabra> palabras;
+	
+	@ManyToMany
+	@JoinTable(name="usuario_palabra",
+				joinColumns= {@JoinColumn(name="id_user")},
+				inverseJoinColumns= {@JoinColumn(name="id_rol")})
+	private List<Rol> roles;
 	
 	public Usuario(){}
 

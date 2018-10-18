@@ -13,7 +13,6 @@ public class Evaluacion implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
-	//relaciones
 	@Column(nullable = false)
 	private long id_usuario;
 	@Column(nullable = false)
